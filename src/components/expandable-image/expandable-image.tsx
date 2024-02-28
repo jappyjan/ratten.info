@@ -5,7 +5,7 @@ import styles from "./expandable-image.module.css";
 import classNames from "classnames";
 import { Link } from "@builder.io/qwik-city";
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
-import { srcToSrcSet } from "~/utils/srcToSrcSet";
+import { srcToSrcSet } from "../../utils/srcToSrcSet";
 
 interface Props {
   onClick$?: () => void;
@@ -30,7 +30,7 @@ export const ExpandableImage = component$<
       if (event.key === "Escape") {
         dialogRef.value?.close();
       }
-    })
+    }),
   );
 
   const srcSet =

@@ -4,7 +4,7 @@ import styles from "./card.module.css";
 import { useNavigate } from "@builder.io/qwik-city";
 import classNames from "classnames";
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
-import { srcToSrcSet } from "~/utils/srcToSrcSet";
+import { srcToSrcSet } from "../../utils/srcToSrcSet";
 
 export enum CardVariant {
   small = "small",
@@ -42,7 +42,7 @@ export const Card = component$((props: Props) => {
       class={classNames(
         styles.card,
         { [styles.withLink]: !!href },
-        { [styles.isLoading]: isLoading }
+        { [styles.isLoading]: isLoading },
       )}
       onClick$={() => (href ? nav(href) : {})}
     >

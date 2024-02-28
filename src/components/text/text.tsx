@@ -1,7 +1,7 @@
 import type { IntrinsicElements } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
-import { formatHtmlText } from "~/utils/formatHtmlText";
+import { formatHtmlText } from "../../utils/formatHtmlText";
 
 export interface TextProps {
   text: string;

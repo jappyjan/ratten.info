@@ -9,7 +9,7 @@ import styles from "./page-grid.module.css";
 import classnames from "classnames";
 import { Card, CardVariant } from "../card/card";
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
-import { getAllContent } from "@builder.io/sdk-qwik";
+import { fetchEntries } from "@builder.io/sdk-qwik";
 import { Link } from "@builder.io/qwik-city";
 import classNames from "classnames";
 
@@ -76,7 +76,7 @@ export const PageGrid = component$((props: PageGridProps) => {
   const hideTitleIfEmpty = props.hideTitleIfEmpty ?? false;
 
   const matches = useResource$(() =>
-    getAllContent({
+    fetchEntries({
       model: "page",
       apiKey: import.meta.env.PUBLIC_BUILDER_API_KEY,
       query: {
