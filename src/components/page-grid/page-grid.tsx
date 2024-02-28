@@ -4,8 +4,9 @@ import {
   component$,
   useResource$,
   useSignal,
+  useStyles$,
 } from "@builder.io/qwik";
-import styles from "./page-grid.module.css";
+import styles from "./page-grid.module.css?inline";
 import classnames from "classnames";
 import { Card, CardVariant } from "../card/card";
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
@@ -22,13 +23,13 @@ interface PageRowProps {
   variant: PageRowVariant;
 }
 const PageRow = component$((props: PageRowProps) => {
+  useStyles$(styles);
+
   return (
     <div
       class={classnames(
-        styles.gridRow,
-        props.variant === PageRowVariant.one
-          ? styles.variantOne
-          : styles.variantTwo,
+        "gridRow",
+        props.variant === PageRowVariant.one ? "variantOne" : "variantTwo",
       )}
     >
       <Slot />
@@ -104,14 +105,14 @@ export const PageGrid = component$((props: PageGridProps) => {
   );
 
   return (
-    <div class={styles.grid}>
+    <div class="grid">
       {showTitle.value &&
         (props.href ? (
-          <Link class={classNames("anchor", styles.title)} href={props.href}>
+          <Link class={classNames("anchor", "title")} href={props.href}>
             {props.title}
           </Link>
         ) : (
-          <span class={styles.title}>{props.title}</span>
+          <span class="title">{props.title}</span>
         ))}
       <Resource
         value={matches}

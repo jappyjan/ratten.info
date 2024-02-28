@@ -1,14 +1,16 @@
 import type { IntrinsicElements } from "@builder.io/qwik";
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import SearchIcon from "./search.svg?jsx";
-import styles from "./search.module.css";
+import styles from "./search.module.css?inline";
 import classNames from "classnames";
 
 export const Search = component$<IntrinsicElements["button"]>((props) => {
+  useStyles$(styles);
+
   return (
     <>
-      <button {...props} class={classNames(styles.button, props.class)}>
-        <SearchIcon class={styles.searchIcon} />
+      <button {...props} class={classNames("button", props.class)}>
+        <SearchIcon class="searchIcon" />
       </button>
       <dialog>
         <form>

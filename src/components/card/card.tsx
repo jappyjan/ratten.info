@@ -1,6 +1,6 @@
 /* eslint-disable qwik/jsx-img */
-import { component$ } from "@builder.io/qwik";
-import styles from "./card.module.css";
+import { component$, useStyles$ } from "@builder.io/qwik";
+import styles from "./card.module.css?inline";
 import { useNavigate } from "@builder.io/qwik-city";
 import classNames from "classnames";
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
@@ -22,6 +22,8 @@ interface Props {
 }
 
 export const Card = component$((props: Props) => {
+  useStyles$(styles);
+
   const nav = useNavigate();
   const {
     title,
@@ -39,11 +41,7 @@ export const Card = component$((props: Props) => {
 
   return (
     <div
-      class={classNames(
-        styles.card,
-        { [styles.withLink]: !!href },
-        { [styles.isLoading]: isLoading },
-      )}
+      class={classNames("card", { withLink: !!href }, { isLoading: isLoading })}
       onClick$={() => (href ? nav(href) : {})}
     >
       {headerImageSrc && (
@@ -52,12 +50,12 @@ export const Card = component$((props: Props) => {
           src={headerImageSrc}
           srcset={headerImageSrcSet}
           alt={title}
-          class={styles.headerImage}
+          class="headerImage"
         />
       )}
-      <h3 class={styles.title}>{title}</h3>
+      <h3 class="title">{title}</h3>
       {variant !== CardVariant.small && (
-        <p class={styles.description}>{description}</p>
+        <p class="description">{description}</p>
       )}
     </div>
   );

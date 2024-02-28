@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-import styles from "./page-headline.module.css";
+import { component$, useStyles$ } from "@builder.io/qwik";
+import styles from "./page-headline.module.css?inline";
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
 
 interface Props {
@@ -8,10 +8,12 @@ interface Props {
 }
 
 export const PageHeadline = component$((props: Props) => {
+  useStyles$(styles);
+
   return (
-    <header class={styles.container}>
-      <h1 class={styles.title}>{props.title}</h1>
-      {props.subtitle && <h2 class={styles.subtitle}>{props.subtitle}</h2>}
+    <header class="container">
+      <h1 class="title">{props.title}</h1>
+      {props.subtitle && <h2 class="subtitle">{props.subtitle}</h2>}
     </header>
   );
 });

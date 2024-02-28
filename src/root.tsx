@@ -1,4 +1,3 @@
-
 export default () => {
   return (
     <>
@@ -6,8 +5,7 @@ export default () => {
         <meta charSet="utf-8" />
         <title>Qwik Blank App</title>
       </head>
-      <body>
-      </body>
+      <body></body>
     </>
   );
 };
