@@ -1,16 +1,23 @@
+import type { QwikIntrinsicElements } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
+import LogoImage from "./logo.webp?jsx";
+import styles from "./logo.module.css";
+import classNames from "classnames";
+import type { RegisteredComponent } from "@builder.io/sdk-qwik";
 
-export const Logo = component$(() => {
+export const Logo = component$<QwikIntrinsicElements["img"]>((props) => {
   return (
-    <div>
-      <a href="https://qwik.builder.io/">
-        <img
-          alt="Qwik Logo"
-          width={400}
-          height={147}
-          src="https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F667ab6c2283d4c4d878fb9083aacc10f"
-        />
-      </a>
-    </div>
+    <LogoImage
+      width="200px"
+      height="auto"
+      {...props}
+      class={classNames(styles.logo, props.class)}
+    />
   );
 });
+
+export const LogoRegistryDefinition: RegisteredComponent = {
+  component: Logo,
+  name: "Logo",
+  inputs: [],
+};

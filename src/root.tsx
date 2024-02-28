@@ -1,4 +1,3 @@
-import { Counter } from "./components/counter/counter";
 import { Logo } from "./components/logo/logo";
 
 export default () => {
@@ -10,7 +9,6 @@ export default () => {
       </head>
       <body>
         <Logo />
-        <Counter />
       </body>
     </>
   );
