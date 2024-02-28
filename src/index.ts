@@ -18,7 +18,6 @@ export {
   Instructions,
   InstructionsRegistryDefinition,
 } from "./components/instructions/instructions";
-export { Logo, LogoRegistryDefinition } from "./components/logo/logo";
 export { News, NewsRegistryDefinition } from "./components/news/news";
 export {
   PageGrid,
