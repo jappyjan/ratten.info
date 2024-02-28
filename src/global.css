@@ -1,0 +1,224 @@
+:root {
+  --text-color: #3e3e3e;
+  --body-background: 255, 255, 255;
+
+  --anchor-gradient-start: #16c99e;
+  --anchor-gradient-end: #1653c9;
+
+  --anchor-color: linear-gradient(
+    var(--anchor-gradient-start),
+    var(--anchor-gradient-end)
+  );
+  --anchor-border-color: var(--anchor-gradient-end);
+  --anchor-active-border-color: var(--anchor-gradient-start);
+
+  --border-rounding: 15px;
+
+  /** just for reference :/ doesnt yet work in css ... */
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1200px;
+
+  --table-row-even-background: hsl(220, 80%, 95%);
+  --table-row-uneven-background: white;
+}
+
+body {
+  padding: 0;
+  color: var(--text-color);
+  line-height: inherit;
+  background: rgb(var(--body-background));
+  min-height: 100vh;
+  max-width: min(1200px, 85vw);
+  overflow-x: hidden;
+  padding-inline: 50px;
+  width: 85vw;
+  margin: 0 auto;
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-inline: 25px;
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  margin-top: 25px;
+}
+
+h1 {
+  font-size: 52px;
+  text-align: center;
+  font-weight: normal;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 52px;
+  font-weight: lighter;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.anchor {
+  text-decoration: none;
+
+  color: var(--anchor-gradient-end);
+  background: var(--anchor-color);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  border-bottom: transparent 1px solid;
+
+  transition: border-color 0.3s ease;
+}
+
+.anchor:hover {
+  text-decoration: underline;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  border-bottom-color: var(--anchor-border-color);
+}
+
+.anchor.active {
+  border-bottom-color: var(--anchor-active-border-color);
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+@property --checkbox-background-color-start {
+  syntax: "<color>";
+  initial-value: white;
+  inherits: false;
+}
+
+@property --checkbox-background-color-end {
+  syntax: "<color>";
+  initial-value: white;
+  inherits: false;
+}
+
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  transform: translate(0, -2px);
+  margin-left: 15px;
+  margin-right: 15px;
+
+  border-radius: var(--border-rounding) !important;
+  border: 1px solid var(--text-color);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+
+  --background-color-start: white;
+  --background-color-end: white;
+
+  transition:
+    --checkbox-background-color-start 0.5s ease-in-out,
+    --checkbox-background-color-end 0.5s ease-in-out;
+
+  background-image: linear-gradient(
+    var(--checkbox-background-color-start),
+    var(--checkbox-background-color-end)
+  );
+}
+
+input[type="checkbox"]:checked {
+  --checkbox-background-color-start: var(--anchor-gradient-start);
+  --checkbox-background-color-end: var(--anchor-gradient-end);
+}
+
+hr {
+  margin-block: 50px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes shrink-x {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  margin: 25px 0;
+  table-layout: fixed;
+}
+
+td,
+th {
+  padding: 15px;
+  word-wrap: break-word;
+}
+
+td,
+th {
+  text-align: left;
+}
+
+tr:nth-child(even) td {
+  background-color: var(--table-row-even-background);
+}
+
+tr:nth-child(odd) td {
+  background-color: var(--table-row-uneven-background);
+}
