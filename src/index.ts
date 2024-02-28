@@ -1,5 +1,4 @@
 // system components
-export { Card } from "./components/card/card";
 export { Dialog } from "./components/dialog/dialog";
 export { DynamicLinkList } from "./components/dynamic-link-list/dynamic-link-list";
 export { Footer } from "./components/footer/footer";
@@ -10,6 +9,7 @@ export { Search } from "./components/search/search";
 export { Table } from "./components/table/table";
 
 // builder.io components
+export { Card, CardRegistryDefinition } from "./components/card/card";
 export {
   ExpandableImage,
   ExpandableImageRegistryDefinition,
