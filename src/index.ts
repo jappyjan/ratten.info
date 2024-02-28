@@ -1,7 +1,6 @@
 // system components
 export { Dialog } from "./components/dialog/dialog";
 export { DynamicLinkList } from "./components/dynamic-link-list/dynamic-link-list";
-export { Footer } from "./components/footer/footer";
 export { NavLink } from "./components/nav-link/nav-link";
 export { Navigation } from "./components/navigation/navigation";
 export { RouterHead } from "./components/router-head/router-head";
