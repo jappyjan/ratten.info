@@ -4,7 +4,7 @@ import { routeLoader$ } from "@builder.io/qwik-city";
 import {
   getBuilderSearchParams,
   Content,
-  fetchOneEntry
+  fetchOneEntry,
 } from "@builder.io/sdk-qwik";
 import { CUSTOM_COMPONENTS } from "../../components/builder-registry";
 import { PageHeadline } from "@jappyjan/qwik-jminimal/src";
