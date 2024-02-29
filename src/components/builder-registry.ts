@@ -8,7 +8,7 @@ import {
   NewsRegistryDefinition,
   TLDRRegistryDefinition,
   CardRegistryDefinition,
-} from "@jappyjan/qwik-jminimal";
+} from "@jappyjan/qwik-jminimal/src";
 import { LogoRegistryDefinition } from "./logo/logo";
 
 /**

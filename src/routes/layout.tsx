@@ -4,7 +4,7 @@ import "@fontsource-variable/montserrat/wght.css";
 import styles from "./layout.module.css";
 import { inject as injectVercelAnalytics } from "@vercel/analytics";
 import { Link } from "@builder.io/qwik-city";
-import { Navigation, Search } from "@jappyjan/qwik-jminimal";
+import { Navigation, Search } from "@jappyjan/qwik-jminimal/src";
 import { Logo } from "~/components/logo/logo";
 import { Footer } from "~/components/footer/footer";
 

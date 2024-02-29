@@ -7,7 +7,7 @@ import {
   fetchOneEntry
 } from "@builder.io/sdk-qwik";
 import { CUSTOM_COMPONENTS } from "../../components/builder-registry";
-import { PageHeadline } from "@jappyjan/qwik-jminimal";
+import { PageHeadline } from "@jappyjan/qwik-jminimal/src";
 
 function fetchPageOfModel(model: string, url: URL) {
   return fetchOneEntry({

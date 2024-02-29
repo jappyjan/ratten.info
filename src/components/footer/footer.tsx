@@ -2,7 +2,7 @@ import type { IntrinsicElements } from "@builder.io/qwik";
 import { component$ } from "@builder.io/qwik";
 import styles from "./footer.module.css";
 import classNames from "classnames";
-import { DynamicLinkList } from "@jappyjan/qwik-jminimal";
+import { DynamicLinkList } from "@jappyjan/qwik-jminimal/src";
 
 export const Footer = component$<IntrinsicElements["footer"]>((props) => {
   return (
