@@ -42,6 +42,3 @@ lerna-debug.log*
 
 # Vercel
 .vercel
-
-# sub project
-src/components/shared

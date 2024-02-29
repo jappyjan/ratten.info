@@ -7,7 +7,7 @@ import {
 
 import "./normalize.css";
 import "./global.css";
-import { RouterHead } from "@jappyjan/qwik-jminimal/src";
+import { RouterHead } from "./components/shared/router-head/router-head";
 
 export default component$(() => {
   /**
