@@ -46,7 +46,7 @@
     "vite-tsconfig-paths": "^4.3.1"
   },
   "dependencies": {
-    "@fontsource-variable/montserrat": "^5.0.17",
+    "@fontsource-variable/montserrat": "^5.0.18",
     "@fontsource/libre-barcode-128-text": "^5.0.18",
     "@vercel/analytics": "^1.2.2",
     "classnames": "^2.5.1"
